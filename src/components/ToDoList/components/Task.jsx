@@ -83,9 +83,11 @@ function Task(props) {
       dispatch(editTask({ id, desc: taskVal }));
 
       const parentRowRelTarg = ev.relatedTarget && ev.relatedTarget.closest('.to-do-app__task-row');
-      const parentRowCurTarg = ev.currentTarget && ev.currentTarget.closest('.to-do-app__task-row');
+      const parentRowCurTarg = ev.currentTarget.closest('.to-do-app__task-row');
+      const isEditButton = !!ev.relatedTarget && ev.relatedTarget.classList.contains('to-do-app__edit-button');
 
       if (parentRowRelTarg !== parentRowCurTarg) switchEditMode();
+      if (!isEditButton && parentRowRelTarg === parentRowCurTarg) switchEditMode();
     },
     [
       id,
@@ -131,6 +133,7 @@ function Task(props) {
       <Col offset={1} span={1}>
         <Form.Item>
           <Button
+            className="to-do-app__edit-button"
             shape="circle"
             icon="edit"
             onClick={switchEditMode}
