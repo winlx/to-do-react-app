@@ -1,0 +1,8 @@
+.to-do-app > .ant-card-body {
+  padding: 8px;
+}
+
+.to-do-app {
+  margin: auto;
+  max-width: 800px;
+}
