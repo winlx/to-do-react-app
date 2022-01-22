@@ -5,7 +5,7 @@
   "homepage": "https://winlx.github.io/to-do-react-app",
   "dependencies": {
     "antd": "^3.20.5",
-    "nanoid": "^2.0.3",
+    "nanoid": "^3.1.31",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
